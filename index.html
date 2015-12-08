@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Assignment 3 - Lab Report 3 by drmblog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Assignment 3 - Lab Report 3</h1>
+      <h2 class="project-tagline">#EURDRM</h2>
+      <a href="https://github.com/drmblog/report-3" class="btn">View on GitHub</a>
+      <a href="https://github.com/drmblog/report-3/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/drmblog/report-3/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction:</h1>
+
+<p>For the purpose of this assignment, I have used graph editor software named <a href="https://www.yworks.com/products/yed">yEd Graph Editor</a>. yEd Graph Editor is a free software for all major computer platforms which provides its users the possibility to generate and create high-quality diagrams, and if needed to manually edit and modify them. </p>
+
+<h1>
+<a id="data-gathering-and-preprocessing" class="anchor" href="#data-gathering-and-preprocessing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Gathering and preprocessing</h1>
+
+<p>The data set analyzed here is a work compiled by M. Newman (2006) in May 2006 and it represents the data on coauthorship network of scientists who work and execute experiments in the field of network theory. The dataset itself comes in a form of a file with .gml extension.</p>
+
+<p>yEd Graph Editor natively supports .gml extension, so there was no need for preprocessing and no troubles occurred, while opening up a graph in the software. </p>
+
+<h1>
+<a id="visualisations" class="anchor" href="#visualisations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Visualisations</h1>
+
+<p>After the dataset was successfully loaded, all the information appeared on the screen. The first outcome was not very representative. Thus additional modifications were needed. 
+<img src="https://github.com/drmblog/report-3/blob/master/images/1.png?raw=true" alt="Figure 1"></p>
+
+<p>At first I tried to create a <strong>hierarchical layout</strong> with primary orientation going from top to bottom. However, soon it became clear, that this type of layout might not be very suitable for the type of data analyzed. </p>
+
+<p><img src="https://github.com/drmblog/report-3/blob/master/images/2.png?raw=true" alt="Figure 2"></p>
+
+<p>For this reason I have also tried to create a <strong>directed tree</strong> layout, which looked a bit different, but still did not provide enough visual feedback. </p>
+
+<p><img src="https://github.com/drmblog/report-3/blob/master/images/3.png?raw=true" alt="Figure 3"></p>
+
+<p>After experimenting with several other layouts, I have found <strong>circular layout</strong> to work best for the type of data which represents networks. Through this type of graph it was possible to observe a <em>big picture</em> clearly, and indicate distinct network groups. Those groups represented scientists and authors, who seem to work a lot with each other or simply cite each other. </p>
+
+<p><img src="https://github.com/drmblog/report-3/blob/master/images/4.png?raw=true" alt="Figure 4"></p>
+
+<p>For example, from the outset my attention was immediately caught by this very dense circle. This group was separated and featured a lot of tight interlinkages. </p>
+
+<p><img src="https://github.com/drmblog/report-3/blob/master/images/5.png?raw=true" alt="Figure 5"></p>
+
+<p>What was interesting, is that selecting a particular node in  yEd Graph Editor would show its own ego networks on the left sidebars under the window area called «neighborhood». </p>
+
+<p><img src="https://github.com/drmblog/report-3/blob/master/images/6.png?raw=true" alt="Figure 6"></p>
+
+<p>yEd Graph Editor provides the possibility not only to show graphs, but also analyze them. However, analysis featured might be limited compared to other software products, the primary focus of which is network analysis. One of the available analysis features is the calculation of graph’s centrality measures. It can be found under the section called <em>tool</em> in the top bar menu of the main window. I have decided to use «number of connected edges» as a parameter for a centrality measure. In addition to that, it was possible to colorize and change the size of nodes, according to the value of calculated measures.</p>
+
+<p><img src="https://github.com/drmblog/report-3/blob/master/images/7.png?raw=true" alt="Figure 7"></p>
+
+<p>I have used orange color and a bigger node size, in order to highlight those nodes who scored high on the measurement calculation process. </p>
+
+<p><img src="https://github.com/drmblog/report-3/blob/master/images/8.png?raw=true" alt="Figure 8"></p>
+
+<p>It appears that scientist with surname written as Barabasi has the biggest amount of outgoing and ingoing citations in total. Another remarkable node has lead to Newman, the actual author of the explored dataset.</p>
+
+<p><img src="https://github.com/drmblog/report-3/blob/master/images/9.png?raw=true" alt="Figure 9">
+<img src="https://github.com/drmblog/report-3/blob/master/images/10.png?raw=true" alt="Figure 10"></p>
+
+<p>Later on I have changed the parameter of centrality measure to the ingoing citation only. However, it did not make a lot of differences to the existing network leaders. On the other hand, remarkably the previously outlined distinct dense science group changed dramatically. It was clearly possible to observe, that only half of the researchers in the circles get a lot of incoming citations. The test of the outgoing citations has shown, that another half of this groups is the one who cites the first half. </p>
+
+<p><img src="https://github.com/drmblog/report-3/blob/master/images/11.png?raw=true" alt="Figure 11">
+<img src="https://github.com/drmblog/report-3/blob/master/images/12.png?raw=true" alt="Figure 12"></p>
+
+<p>After that I have tried to use an experimental feature called «one-click-layout». This function tries to identify the best possible layout for the provided type of data and after that generates a suitable graph. </p>
+
+<p><img src="https://github.com/drmblog/report-3/blob/master/images/13.png?raw=true" alt="Figure 13"></p>
+
+<p>Different setting of algorithms used provided me different results. Even running the same algorithm over and over again will make slight changes to the graph. </p>
+
+<p><img src="https://github.com/drmblog/report-3/blob/master/images/14.png?raw=true" alt="Figure 14">
+<img src="https://github.com/drmblog/report-3/blob/master/images/15.png?raw=true" alt="Figure 15"></p>
+
+<h1>
+<a id="conclusion" class="anchor" href="#conclusion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion</h1>
+
+<p>Generaly, I found yEd Graph Editor to be a good tool for the start of network analysis. However, it might be not so robust and does not feature many analysis tools compared to other existing solutions, like <a href="http://gephi.org/">Gephi</a>. However, at the time of writing, Gephi software for mac platforms was still in beta development and did not work properly all the time, which made the product itself redundant. </p>
+
+<p>M. E. J. Newman, Phys. Rev. E 74, 036104 (2006).</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/drmblog/report-3">Assignment 3 - Lab Report 3</a> is maintained by <a href="https://github.com/drmblog">drmblog</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
